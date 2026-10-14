@@ -1,0 +1,7 @@
+*.db
+*.csv
+*.log
+*.out
+public_url.txt
+venv/
+lt/
