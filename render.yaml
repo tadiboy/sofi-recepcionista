@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: sofi-recepcionista
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 1 -b 0.0.0.0:$PORT app:app
+    healthCheckPath: /health
+    envVars:
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: PUBLIC_URL
+        sync: false
